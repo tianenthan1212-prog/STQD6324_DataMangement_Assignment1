@@ -14,17 +14,13 @@ The dataset used is the classical **Iris Dataset**, which consist 5 columns:
 
 ### 2. Data Preprocessing 
 The dataset is processed using **PySpark MLlib pipelines**:
-
-#### 1. Label Encoding
+#### Label Encoding
 `StringIndexer` converts categorical labels (`species`) into numeric values (`label`)
-
-#### 2. Feature Engineering
+#### Feature Engineering
 `VectorAssembler` combines all feature columns into a single vector column called `features`
-
-#### 3. Train-Test Split
+#### Train-Test Split
 Dataset is split into: Training set and Testing set in ration 8:2
-
-#### 4. Model Training & Hyperparameter Optimization
+#### Model Training & Hyperparameter Optimization
 For every model, hyperparameter spaces were evaluated across a **3-fold Cross Validator** framework to reduce overfitting ensure stable performance metrics.
 * **Logistic Regression**: - Tuned parameters: Regularization (`regParam`) and Elastic Net mixing (`elasticNetParam`)
 * **Decision Tree**:- Tuned parameter: Maximum depth (`maxDepth`)
